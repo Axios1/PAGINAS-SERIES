@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="text-center">Series</h1>
+            </div>
+        </div>
+        <div class="row"  id="contenedorSeries">
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="contenidoModal1"></div>
+                <div class="modal-body" id="contenidoModal2"></div>
+                <div class="modal-body" id="contenidoModal3"></div>
+                <div class="modal-body" id="contenidoModal4"></div>
+                <div class="modal-body" id="contenidoModal5"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+    <script>
+        function cargarJSON(url) {
+            return fetch(url)
+                .then(response => response.json())
+        }
+        Promise.all([cargarJSON('JSONS/70SHOW.json'), cargarJSON('JSONS/BCS.json'), cargarJSON('JSONS/BJHRM.json'), cargarJSON('JSONS/BreakingBad.json'), cargarJSON('JSONS/Flash.json'), cargarJSON('JSONS/friends.json'), cargarJSON('JSONS/GOT.json'), cargarJSON('JSONS/HIMTYM.json'), cargarJSON('JSONS/mr robot.json'), cargarJSON('JSONS/seinfeld.json'), cargarJSON('JSONS/shadow hunters.json'), cargarJSON('JSONS/smallville.json'), cargarJSON('JSONS/Stranger Things.json'), cargarJSON('JSONS/TBBT.json'), cargarJSON('JSONS/the good place.json'), cargarJSON('JSONS/the office.json'), cargarJSON('JSONS/the Witcher.json'), cargarJSON('JSONS/Vikings.json'), cargarJSON('JSONS/WestWorld.json')])
+            .then(dataArray => {
+                const serie1 = dataArray[0];
+                const serie2 = dataArray[1];
+                const serie3 = dataArray[2];
+                const serie4 = dataArray[3];
+                const serie5 = dataArray[4];
+                const serie6 = dataArray[5];
+                const serie7 = dataArray[6];
+                const serie8 = dataArray[7];
+                const serie9 = dataArray[8];
+                const serie10 = dataArray[9];
+                const serie11 = dataArray[10];
+                const serie12 = dataArray[11];
+                const serie13 = dataArray[12];
+                const serie14 = dataArray[13];
+                const serie15 = dataArray[14];
+                const serie16 = dataArray[15];
+                const serie17 = dataArray[16];
+                const serie18 = dataArray[17];
+                const serie19 = dataArray[18];
+                const serie20 = dataArray[19];
+
+
+
+
+
+                let contenedorSeries = document.getElementById("contenedorSeries");
+                
+                function verDetalles(serie) {
+                    let tituloModal = document.getElementById("exampleModalLabel");
+                    tituloModal.textContent = serie.titulo;
+                    let contenidoModal1 = document.getElementById("contenidoModal1");
+                    contenidoModal1.textContent = "Ultima dia de emisión: "+serie.ultimodiadeemision;
+                    let contenidoModal2 = document.getElementById("contenidoModal2");
+                    contenidoModal2.textContent = "Sinopsis: "+serie.sinopsis;
+                    let contenidoModal3 = document.getElementById("contenidoModal3");
+                    contenidoModal3.textContent = "Numero de Temporadas: "+serie.numerodeTemporadas;
+                    let contenidoModal4 = document.getElementById("contenidoModal4");
+                    contenidoModal4.textContent = "Numero de Episodios: "+serie.numerodeEpisodios;
+                    let contenidoModal5 = document.getElementById("contenidoModal5");
+                    contenidoModal5.textContent = "Nombre de la Cancion: "+serie.nombredelaCancion;
+                }
+
+                function crearElementoSerie(serie) {
+                    let divSerie= document.createElement("div");
+                    divSerie.classList.add("card");
+                    divSerie.style.width = "20.5rem";
+                    divSerie.classList.add("col-md-3"); 
+                    divSerie.classList.add("col-sm-6"); 
+                    divSerie.classList.add("col-xs-12");  
+                    let imagen = document.createElement("img");
+                    imagen.src = serie.imagen;
+                    let titulo = document.createElement("h4");
+                    titulo.innerHTML = serie.titulo;
+                    let protagonistas = document.createElement("p");
+                    protagonistas.innerHTML = "Protagonistas: "+serie.protagonistas;
+                    let añodeestreno = document.createElement("p");
+                    añodeestreno.innerHTML = "Año de estreno: "+serie.añodeestreno;
+                    let verMas = document.createElement("button");
+                    verMas.innerHTML = "Ver mas";
+                    verMas.classList.add("btn");
+                    verMas.classList.add("btn-primary");
+                    verMas.setAttribute("data-bs-toggle","modal");
+                    verMas.setAttribute("data-bs-target","#exampleModal");
+                    verMas.addEventListener("click", function() {
+                        verDetalles(serie);
+                    });
+
+                    divSerie.classList.add("col-3");
+                    divSerie.appendChild(imagen);
+                    divSerie.appendChild(titulo);
+                    divSerie.appendChild(protagonistas);
+                    divSerie.appendChild(añodeestreno);
+                    divSerie.appendChild(verMas);
+
+                    return divSerie;
+                }
+
+                contenedorSeries.appendChild(crearElementoSerie(serie1));
+                contenedorSeries.appendChild(crearElementoSerie(serie2));
+                contenedorSeries.appendChild(crearElementoSerie(serie3));
+                contenedorSeries.appendChild(crearElementoSerie(serie4));
+                contenedorSeries.appendChild(crearElementoSerie(serie5));
+                contenedorSeries.appendChild(crearElementoSerie(serie6));
+                contenedorSeries.appendChild(crearElementoSerie(serie7));
+                contenedorSeries.appendChild(crearElementoSerie(serie8));
+                contenedorSeries.appendChild(crearElementoSerie(serie9));
+                contenedorSeries.appendChild(crearElementoSerie(serie10));
+                contenedorSeries.appendChild(crearElementoSerie(serie11));
+                contenedorSeries.appendChild(crearElementoSerie(serie12));
+                contenedorSeries.appendChild(crearElementoSerie(serie13));
+                contenedorSeries.appendChild(crearElementoSerie(serie14));
+                contenedorSeries.appendChild(crearElementoSerie(serie15));
+                contenedorSeries.appendChild(crearElementoSerie(serie16));
+                contenedorSeries.appendChild(crearElementoSerie(serie17));
+                contenedorSeries.appendChild(crearElementoSerie(serie18));
+                contenedorSeries.appendChild(crearElementoSerie(serie19));
+                contenedorSeries.appendChild(crearElementoSerie(serie20));
+    
+            });
+    </script>
+</body>
+</html>

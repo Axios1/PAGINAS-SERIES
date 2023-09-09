@@ -1,0 +1,11 @@
+{
+    "imagen": "IMAGENES/GOT.jpg",
+    "titulo": "Game of Thrones",
+    "protagonistas": "Emilia Clarke, Kit Harington, Lena Headey, Peter Dinklage, Maisie Williams, Nikolaj Coster-Waldau",
+    "añodeestreno": "17 de Abril de 2011",
+    "ultimodiadeemision" : "19 de Mayo de 2019",
+    "sinopsis": "La serie está ambientada en el ficticio continente de Westeros y sigue las luchas de poder entre noblezas y familias por el Trono de Hierro. Mientras tanto, en el norte, una amenaza más grande se avecina en forma de los Caminantes Blancos.",
+    "numerodeTemporadas" : "8 Temporadas",
+    "numerodeEpisodios": "73 Episodios",
+    "nombredelaCancion": "Main Title por Ramin Djawadi"
+}

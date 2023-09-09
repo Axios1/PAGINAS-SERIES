@@ -1,0 +1,11 @@
+{
+    "imagen": "IMAGENES/breaking bad.jpeg",
+    "titulo": "Breaking Bad",
+    "protagonistas": "Bryan Cranston, Aaron Paul, Anna Gunn, Dean Norris, Betsy Brandt, RJ Mitte",
+    "añodeestreno": "20 de Enero de 2008",
+    "ultimodiadeemision" : "29 de Septiembre de 2013",
+    "sinopsis": "La serie sigue la transformación de Walter White, un profesor de química que se convierte en un fabricante de metanfetamina después de ser diagnosticado con cáncer terminal. Junto a su exalumno Jesse Pinkman, se adentran en el mundo del crimen mientras enfrentan peligrosos cárteles de drogas.",
+    "numerodeTemporadas" : "5 Temporadas",
+    "numerodeEpisodios": "62 Episodios",
+    "nombredelaCancion": "Breaking Bad Main Title Theme por Dave Porter"
+}
